@@ -83,7 +83,22 @@ SELECT courses.course_name, first_name || ' ' || last_name AS full_name
 FROM courses
 JOIN professors ON courses.professor_id = professors.id;
 
+-- Retrieve all courses that have students enrolled in them
+SELECT DISTINCT courses.course_name FROM courses 
+JOIN enrollments ON courses.id = enrollments.course_id;
 
+
+-- Update Data
+
+-- Update one of the student's emails
+UPDATE students
+SET email = 'bob.ross@example.com'
+WHERE first_name = 'Bob' AND last_name = 'Ross';
+
+
+-- Delete Data
+
+-- Remove a student from one of their courses
 
 
 
