@@ -103,3 +103,13 @@ WHERE products.product_name = 'Kong';
 UPDATE products 
 SET stock_quantity = stock_quantity - 1
 WHERE products.product_name = 'dog bed' OR products.product_name = "crate";
+
+
+-- Delete data
+
+-- Remove one of the orders and all asscoiated order items from the system
+DELETE FROM order_items
+WHERE order_id = 1;
+
+DELETE FROM orders
+WHERE id = 1;
