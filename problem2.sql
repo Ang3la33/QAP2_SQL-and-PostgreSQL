@@ -90,3 +90,16 @@ JOIN orders ON order_items.order_id = orders.id
 JOIN products ON order_items.product_id = products.id
 JOIN customers ON orders.customer_id = customers.id
 WHERE orders.customer_id = 1;
+
+
+-- Update data
+
+-- Perform an update to simulate the reducing of stock quantities of items after a customer places an order
+-- This update is for order id # 1 (1 dog bed, 2 kongs, 1 crate)
+UPDATE products 
+SET stock_quantity = stock_quantity - 2
+WHERE products.product_name = 'Kong';
+
+UPDATE products 
+SET stock_quantity = stock_quantity - 1
+WHERE products.product_name = 'dog bed' OR products.product_name = "crate";
