@@ -56,4 +56,37 @@ VALUES
 	(1,'2024-10-01'),
 	(4,'2024-10-10');
 
+INSERT INTO order_items (order_id, product_id, quantity)
+VALUES
+	(1,1,1),
+	(1,2,2),
+	(1,5,1),
+	(2,3,1),
+	(2,4,1),
+	(2,1,1),
+	(3,3,2),
+	(3,4,2),
+	(4,3,1),
+	(4,4,1),
+	(4,2,2),
+	(5,3,2),
+	(5,4,2);
 
+
+-- Write SQL queries
+
+-- Retrieve the names and stock quantities of all products
+SELECT products.product_name, products.stock_quantity FROM products;
+
+-- Retrieve the product names and quantites for one of the orders placed
+SELECT products.product_name, order_items.quantity FROM order_items
+JOIN products ON order_items.product_id = products.id
+WHERE order_items.order_id = 1;
+
+-- Retrieve all orders placed by a specific customer (includind ID's of what was ordered and quantities)
+SELECT orders.customer_id, order_items.order_id, order_items.product_id, order_items.quantity
+FROM order_items
+JOIN orders ON order_items.order_id = orders.id
+JOIN products ON order_items.product_id = products.id
+JOIN customers ON orders.customer_id = customers.id
+WHERE orders.customer_id = 1;
