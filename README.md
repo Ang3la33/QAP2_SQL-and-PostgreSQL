@@ -1,9 +1,9 @@
-QAP 2 - SQL and PostgreSQL Mastery
-Objective 
+#QAP 2 - SQL and PostgreSQL Mastery
+##Objective 
 Complete both provided problems below, make sure to include all SQL to create the tables, insert the data and perform all queries.
 Due date: October 14th, 2024 at 11:59PM
 
-Problem 1: University Course Enrollment System 
+###Problem 1: University Course Enrollment System 
 Scenario 
 You’re tasked with developing a system to manage university students, professors, courses, and their enrollments.
 
